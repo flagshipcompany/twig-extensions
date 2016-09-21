@@ -4,7 +4,7 @@ namespace Flagship\Components\Twig\Extensions\Filters;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-class TimeAgoFilter extends Twig_Extension
+class TimeAgoFilter extends \Twig_Extension
 {
     public static $units = [
         31536000 => 'year',
