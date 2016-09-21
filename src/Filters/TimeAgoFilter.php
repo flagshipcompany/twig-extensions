@@ -1,5 +1,7 @@
 <?php
 
+namespace Flagship\Components\Twig\Extensions\Filters;
+
 use Symfony\Component\Translation\TranslatorInterface;
 
 class TimeAgoFilter extends Twig_Extension
