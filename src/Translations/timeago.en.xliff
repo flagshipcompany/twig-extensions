@@ -58,6 +58,18 @@
                 <source>diff.in.year</source>
                 <target>in 1 year|in %count% years</target>
             </trans-unit>
+            <trans-unit id="15">
+                <source>yesterday</source>
+                <target>Yesterday</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>today</source>
+                <target>Today</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>tomorrow</source>
+                <target>Tomorrow</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
