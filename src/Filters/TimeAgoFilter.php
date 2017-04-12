@@ -50,7 +50,7 @@ class TimeAgoFilter extends \Twig_Extension
 
             $transString = ($dayDiff !== false) ? $dayDiff : 'diff.'.($isFuture ? 'in.' : 'ago.').$val;
 
-            $numberOfUnits = floor($time / $unit);
+            $numberOfUnits = ceil($time / $unit);
 
             $output = $this->translator->transChoice($transString, $numberOfUnits, ['%count%' => $numberOfUnits]);
 
