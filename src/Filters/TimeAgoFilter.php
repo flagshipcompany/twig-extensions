@@ -61,15 +61,15 @@ class TimeAgoFilter extends \Twig_Extension
     protected function getDays($date)
     {
         $dateDetails = date_parse($date);
-        if ($date == date('Y-m-d', strtotime(('-1 day'))) && $dateDetails['hour'] == false) {
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d', strtotime(('-1 day')))) {
             return 'yesterday';
         }
 
-        if ($date == date('Y-m-d', strtotime(('+1 day'))) && $dateDetails['hour'] == false) {
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d', strtotime(('+1 day')))) {
             return 'tomorrow';
         }
 
-        if ($date == date('Y-m-d') && $dateDetails['hour'] == false) {
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d')) {
             return 'today';
         }
 
