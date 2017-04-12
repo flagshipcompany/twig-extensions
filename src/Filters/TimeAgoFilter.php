@@ -46,12 +46,33 @@ class TimeAgoFilter extends \Twig_Extension
                 continue;
             }
 
-            $transString = 'diff.'.($isFuture ? 'in.' : 'ago.').$val;
-            $numberOfUnits = floor($time / $unit);
+            $dayDiff = $this->getDays($datetime);
+
+            $transString = ($dayDiff !== false) ? $dayDiff : 'diff.'.($isFuture ? 'in.' : 'ago.').$val;
+
+            $numberOfUnits = ceil($time / $unit);
 
             $output = $this->translator->transChoice($transString, $numberOfUnits, ['%count%' => $numberOfUnits]);
 
             return $output;
         }
+    }
+
+    protected function getDays($date)
+    {
+        $dateDetails = date_parse($date);
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d', strtotime(('-1 day')))) {
+            return 'yesterday';
+        }
+
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d', strtotime(('+1 day')))) {
+            return 'tomorrow';
+        }
+
+        if (false == $dateDetails['hour'] && $date == date('Y-m-d')) {
+            return 'today';
+        }
+
+        return false;
     }
 }
