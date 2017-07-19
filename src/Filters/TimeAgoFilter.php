@@ -56,6 +56,8 @@ class TimeAgoFilter extends \Twig_Extension
 
             return $output;
         }
+
+        return $this->translator->transChoice('diff.ago.second', 0, ['%count%' => 0]);
     }
 
     protected function getDays($date)
