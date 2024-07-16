@@ -2,7 +2,7 @@
 
 namespace Flagship\Components\Twig\Extensions\Filters;
 
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Twig\Extension\AbstractExtension;
 
 class TimeAgoFilter extends AbstractExtension
