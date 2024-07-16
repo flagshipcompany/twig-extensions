@@ -53,12 +53,12 @@ class TimeAgoFilter extends AbstractExtension
 
             $numberOfUnits = ceil($time / $unit);
 
-            $output = $this->translator->transChoice($transString, $numberOfUnits, ['%count%' => $numberOfUnits]);
+            $output = $this->translator->trans($transString, ['%count%' => $numberOfUnits]);
 
             return $output;
         }
 
-        return $this->translator->transChoice('diff.ago.second', 0, ['%count%' => 0]);
+        return $this->translator->trans('diff.ago.second', ['%count%' => 0]);
     }
 
     protected function getDays($date)
