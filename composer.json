@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=8.2"
     },
     "require-dev": {
         "twig/twig": "~2.0|~3.0",
