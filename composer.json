@@ -12,7 +12,7 @@
         "php": ">=8.2"
     },
     "require-dev": {
-        "twig/twig": "~2.0|~3.0",
+        "twig/twig": "^3.27",
         "symfony/translation": ">4.0"
     },
     "autoload": {
